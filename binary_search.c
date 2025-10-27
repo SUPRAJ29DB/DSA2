@@ -1,7 +1,5 @@
-//
-// Created by Suprakash Ghosh on 27-10-2025.
-//#include <stdio.h>
 #include <stdlib.h>
+#include<stdio.h>
 
 // Define node structure
 struct Node {
@@ -78,4 +76,5 @@ int main() {
 
 //
 // Created by Suprakash Ghosh on 27-10-2025.
+
 //
