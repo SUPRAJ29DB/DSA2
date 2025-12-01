@@ -1,0 +1,70 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define Max 20
+
+typedef struct
+{
+    char items[Max];
+    int top;
+}stack;
+
+void init(stack *S)
+{
+    S->top = -1;
+}
+
+int isempty(stack *S)
+{
+    return (S->top == -1);
+}
+
+int isfull(stack *S)
+{
+    return (S->top == Max - 1);
+}
+void push(stack *S,char c)
+{
+    if (isfull(S))
+    {
+        printf("Stack Overflow");
+        exit(1);
+    }
+    S->items[++(S->top)]=c;
+}
+
+char pop(stack *S)
+{
+    if (isempty(S))
+    {
+        printf("Stack Underflow");
+        exit(1);
+    }
+    return S->items[(S->top)--];
+}
+
+
+int main()
+{
+    stack S;
+    init(&S);
+    char str[Max];
+    unsigned int i;
+    printf("Enter string.:");
+    gets(str);
+    int len = strlen(str);
+    for(i=0;i<len;i++)
+    {
+        push(&S, str[i]);
+    }
+    for (i=0;i<strlen(str);i++)
+    {
+        str[i]=pop(&S);
+    }
+    printf("reversed string:");
+    puts(str);
+    return 0;
+}
+//
+// Created by Suprakash Ghosh on 01-12-2025.
+//
